@@ -3,7 +3,7 @@ package com.campersamu.chatheads;
 import eu.pb4.placeholders.api.PlaceholderResult;
 import eu.pb4.placeholders.api.Placeholders;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
-import net.fabricmc.api.DedicatedServerModInitializer;
+import net.fabricmc.api.ModInitializer;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
@@ -16,7 +16,7 @@ import java.util.UUID;
 import static net.minecraft.text.Text.literal;
 import static net.minecraft.text.TextColor.fromRgb;
 
-public class ChatHeadsInit implements DedicatedServerModInitializer {
+public class ChatHeads implements ModInitializer {
     //region Constants
     public static final String MODID = "chatheads";
     public static final TextColor[][] DEFAULT_HEAD_TEXTURE = new TextColor[][]{   //hex 0xC01044 -> TextColor.fromRgb(0xC01044)
@@ -36,7 +36,7 @@ public class ChatHeadsInit implements DedicatedServerModInitializer {
     //endregion
 
     @Override
-    public void onInitializeServer() {
+    public void onInitialize() {
         //Add Mod Resources to Polymer Resource Pack
         PolymerResourcePackUtils.addModAssets(MODID);
 

@@ -20,7 +20,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 
-import static com.campersamu.chatheads.ChatHeadsInit.*;
+import static com.campersamu.chatheads.ChatHeads.*;
 import static net.minecraft.text.TextColor.fromRgb;
 
 @Mixin(PlayerManager.class)

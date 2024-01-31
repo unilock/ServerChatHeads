@@ -14,10 +14,10 @@
   },
   "icon": "assets/chatheads/icon.png",
   "license": "GPL-3.0",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
-    "server": [
-      "com.campersamu.chatheads.ChatHeadsInit"
+    "main": [
+      "com.campersamu.chatheads.ChatHeads"
     ]
   },
   "mixins": [
