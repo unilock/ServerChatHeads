@@ -7,7 +7,6 @@ import net.minecraft.server.PlayerManager;
 import net.minecraft.server.network.ConnectedClientData;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.TextColor;
-import org.slf4j.Logger;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -29,12 +28,9 @@ public abstract class DownloadHeadOnJoin {
     @Shadow
     @Final
     private MinecraftServer server;
-    @Shadow
-    @Final
-    private static Logger LOGGER;
     //endregion
 
-    //Mixin into the player connect/join event and downlaod the skin for the player (needs a server restart to update)
+    //Mixin into the player connect/join event and download the skin for the player (needs a server restart to update)
     @Inject(method = "onPlayerConnect", at = @At("HEAD"))
     private void chatheads$invokeDownloadOnJoin(ClientConnection connection, ServerPlayerEntity player, ConnectedClientData clientData, CallbackInfo ci) {
         final var profile = player.getGameProfile();
