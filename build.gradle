@@ -20,6 +20,7 @@ loom {
 
 repositories {
     maven { url = "https://maven.nucleoid.xyz/" }
+    maven { url = "https://repo.sleeping.town/" }
 }
 
 dependencies {
@@ -27,6 +28,7 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
+    implementation include("folk.sisby:kaleido-config:${project.kaleido_version}")
     modImplementation include("eu.pb4:placeholder-api:${project.papi_version}")
     modImplementation include("eu.pb4:polymer-resource-pack:${project.polymer_version}")
 

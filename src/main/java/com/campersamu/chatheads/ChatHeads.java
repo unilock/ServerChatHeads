@@ -4,6 +4,7 @@ import eu.pb4.placeholders.api.PlaceholderResult;
 import eu.pb4.placeholders.api.Placeholders;
 import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
@@ -22,6 +23,7 @@ public class ChatHeads implements ModInitializer {
     //region Constants
     public static final String MODID = "chatheads";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
+    public static final ChatHeadsConfig CONFIG = ChatHeadsConfig.createToml(FabricLoader.getInstance().getConfigDir(), ChatHeads.MODID, "config", ChatHeadsConfig.class);
     public static final TextColor[][] DEFAULT_HEAD_TEXTURE = new TextColor[][]{   //hex 0xC01044 -> TextColor.fromRgb(0xC01044)
             {fromRgb(0x191919), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x191919)},
             {fromRgb(0x191919), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x0c0c0c), fromRgb(0x191919)},
